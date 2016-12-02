@@ -31,13 +31,15 @@ class Login {
 
             $response[Constants::ID_KEY] = $row[Constants::ID_KEY];
 
+            $response[Constants::UPDATED_DATE_KEY] = $row[Constants::UPDATED_DATE_KEY];
+
             $response[Constants::TOOLS_KEY] = array(
                 array(
                     Constants::TOOL_ID_KEY => '1',
-                    '1' . Constants::TOOL_NAME_KEY => Constants::TOOL_1_NAME,
-                    '1' . Constants::TOOL_UNLOCKED_KEY => $row['1' . Constants::TOOL_UNLOCKED_KEY],
-                    '1' . Constants::TOOL_UNITS_KEY => $row['1' . Constants::TOOL_UNITS_KEY],
-                    '1' . Constants::TOOL_DU_KEY => Constants::TOOL_1_DU
+                    Constants::TOOL_JSON_NAME_KEY => Constants::TOOL_1_NAME,
+                    Constants::TOOL_JSON_UNLOCKED_KEY => $row['1' . Constants::TOOL_UNLOCKED_KEY],
+                    Constants::TOOL_JSON_UNITS_KEY => $row['1' . Constants::TOOL_UNITS_KEY],
+                    Constants::TOOL_JSON_DU_KEY => Constants::TOOL_1_DU
                     )
                 );
 
@@ -53,6 +55,18 @@ class Login {
         $response[Constants::SUCCESS_KEY] = 1;
 
         $response[Constants::MESSAGE_KEY] = "Username Successfully Added!";
+
+        $response[Constants::ID_KEY] = '1';
+
+        $response[Constants::TOOLS_KEY] = array(
+                array(
+                    Constants::TOOL_ID_KEY => '1',
+                    Constants::TOOL_JSON_NAME_KEY => Constants::TOOL_1_NAME,
+                    Constants::TOOL_JSON_UNLOCKED_KEY => '0',
+                    Constants::TOOL_JSON_UNITS_KEY => '0',
+                    Constants::TOOL_JSON_DU_KEY => Constants::TOOL_1_DU
+                    )
+                );
 
         echo json_encode($response);
 

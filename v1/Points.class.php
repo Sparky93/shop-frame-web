@@ -95,7 +95,7 @@ class Points {
 
 		$response[Constants::MESSAGE_KEY] = "You have successfully used these points!";
 
-		$response[$tool_id . Constants::TOOL_UNITS_KEY] = $points;
+		$response[Constants::TOOL_JSON_UNITS_KEY] = $points;
 
 		# So till' here, we have successfully updated the users table, time for
 		# info_tools table

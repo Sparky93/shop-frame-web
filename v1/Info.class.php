@@ -30,7 +30,7 @@ class Info {
             $response[Constants::TOOLS_KEY] = array(
                 array(
                     Constants::TOOL_ID_KEY => $row[Constants::TOOL_ID_KEY],
-                    Constants::TOOL_NAME_TOOLS_KEY => $row[Constants::TOOL_NAME_TOOLS_KEY],
+                    Constants::TOOL_JSON_NAME_KEY => $row[Constants::TOOL_JSON_NAME_KEY],
                     Constants::TOOL_UPDATED_ON_TOOLS_KEY => $row[Constants::TOOL_UPDATED_ON_TOOLS_KEY],
                     Constants::TOOL_INDEX_KEY=> $row[Constants::TOOL_INDEX_KEY]
                     )
