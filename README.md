@@ -2,7 +2,7 @@
    # Name: LOGIN 
    # Method: POST
 
-# @Body
+# Body
 
  -> scope = scope_login
   
@@ -13,7 +13,7 @@
    # Name: BUY
    # Method: POST
 
-# @Body
+# Body
 
  -> scope = scope_buy
 
