@@ -54,12 +54,12 @@
  
  
 # Name: 
-   INDEX
+   INFO
    
 # Method: 
    POST
     
 # Body
 
-  # In progress...
+  # No parameters required.
 
