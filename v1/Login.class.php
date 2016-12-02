@@ -14,7 +14,7 @@ class Login {
     public function make_login($db, $gmail) {  
 
         # Here we are checking whether the user exists or not
-        $query = QueryHelper::make_select_query("1", Constants::USERS_TABLE, 
+        $query = QueryHelper::make_select_query("*", Constants::USERS_TABLE, 
             Constants::GMAIL_KEY, Constants::GMAIL_QUERY_KEY);  
 
         $query_params = array(Constants::GMAIL_QUERY_KEY => $gmail); 
@@ -25,13 +25,21 @@ class Login {
 
         if ($row) {  
 
-            $tool1_key = '1' . Constants::TOOL_UNLOCKED_KEY;
+            $id_key = Constants::ID_KEY;
+
+            $tool1_id_key = '1' . Constants::TOOL_UNLOCKED_KEY;
+
+            $tool1_units_key = '1' . Constants::TOOL_UNITS_KEY;
 
             $response[Constants::SUCCESS_KEY] = 2;
 
             $response[Constants::MESSAGE_KEY] = "Username Successfully Logged In !";
 
-            $response[$tool1_key] = $row[$tool1_key];
+            $response[Constants::ID_KEY] = $row["$id_key"];
+
+            $response[$tool1_id_key] = $row["$tool1_id_key"];
+
+            $response[$tool1_units_key] = $row["$tool1_units_key"];
 
             die(json_encode($response));
         

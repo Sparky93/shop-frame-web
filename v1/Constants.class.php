@@ -16,6 +16,7 @@ class Constants {
 	const INFO_TOOLS_TABLE = 'info_tools';
 
 	# DB KEYS
+	const ID_KEY = 'id';
 	const GMAIL_KEY = 'gmail';
 	const CREATED_DATE_KEY = 'created_date';
 	const TOOL_ID_KEY = 'tool_id';
