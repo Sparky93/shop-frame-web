@@ -22,6 +22,8 @@ class Constants {
 	const TOOL_ID_KEY = 'tool_id';
 	const TOOL_UNLOCKED_KEY = '_unlocked'; # the format is toolId_unlocked
 	const TOOL_UNITS_KEY = '_units'; # the format is toolId_units
+	const TOOL_NAME_KEY = '_tool_name';
+	const TOOL_DU_KEY = '_du';
 
 	# QUERY KEYS
 	const GMAIL_QUERY_KEY = ':gmail';
@@ -38,8 +40,9 @@ class Constants {
 	const SCOPE_BUY = 'scope_buy';
 	const SCOPE_POINTS = 'scope_points';
 
-	# DAILY UNITS
+	# DAILY UNITS & TOOLS
 	const TOOL_1_DU = 50;
+	const TOOL_1_NAME = 'tool_one';
 
 }
 

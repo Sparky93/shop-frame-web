@@ -19,7 +19,7 @@ class Buy {
 
 		$query_params = array();
 
-		$this->make_db_conn($db, $query, $query_params, "Buy failed inside the class.");
+		 QueryHelper::make_db_conn($db, $query, $query_params, "Buy failed inside the class.");
 
 		$response[Constants::SUCCESS_KEY] = 1;
 
@@ -28,28 +28,6 @@ class Buy {
 		die(json_encode($response));
 
 	}
-
-	public function make_db_conn($db, $q, $qp, $fail_message) {
-
-    	try {
-
-    		$stmt   = $db->prepare($q);
-    
-    		$result = $stmt->execute($qp);
-
-            return $stmt;
-
-    	} catch (PDOException $ex) {
-
-    		$response[Constants::SUCCESS_KEY] = 0;
-
-    		$response[Constants::MESSAGE_KEY] = $fail_message . $ex->getMessage();
-
-    		die(json_encode($response));
-
-    	}
-
-    }
 
 }
 

@@ -4,6 +4,7 @@ include 'config.inc.php';
 require 'Constants.class.php';
 require 'Login.class.php';
 require 'Buy.class.php';
+require 'Points.class.php';
 
 function make_login_routine($db) {
 
@@ -55,6 +56,10 @@ function make_points_routine($db) {
 		isset($_POST[Constants::GMAIL_KEY]) &&
 		!empty($_POST[Constants::GMAIL_KEY])) {
 
+		$Points = new Points();
+
+	    $Points->make_points($db, $_POST[Constants::GMAIL_KEY],
+	     $_POST[Constants::TOOL_ID_KEY]);
 
 	} else {
 

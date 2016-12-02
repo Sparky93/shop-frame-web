@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Constants.class.php';
+
 class QueryHelper {
 
 	public function __construct() {
@@ -48,6 +50,28 @@ class QueryHelper {
 		return $query;
 
 	}
+
+	static function make_db_conn($db, $q, $qp, $fail_message) {
+
+    	try {
+
+    		$stmt   = $db->prepare($q);
+
+    		$result = $stmt->execute($qp);
+
+            return $stmt;
+
+    	} catch (PDOException $ex) {
+
+    		$response[Constants::SUCCESS_KEY] = 0;
+
+    		$response[Constants::MESSAGE_KEY] = $fail_message . $ex->getMessage();
+
+    		die(json_encode($response));
+
+    	}
+
+    }
 
 }
 

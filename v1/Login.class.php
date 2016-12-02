@@ -19,7 +19,7 @@ class Login {
 
         $query_params = array(Constants::GMAIL_QUERY_KEY => $gmail); 
 
-        $stmt = $this->make_db_conn($db, $query, $query_params, "Database Error1. ");     
+        $stmt = QueryHelper::make_db_conn($db, $query, $query_params, "Database Error1. ");     
 
         $row = $stmt->fetch();   
 
@@ -31,6 +31,10 @@ class Login {
 
             $tool1_units_key = '1' . Constants::TOOL_UNITS_KEY;
 
+            $tool1_name_key = '1' . Constants::TOOL_NAME_KEY;
+
+            $tool1_du_key = '1' . Constants::TOOL_DU_KEY;
+
             $response[Constants::SUCCESS_KEY] = 2;
 
             $response[Constants::MESSAGE_KEY] = "Username Successfully Logged In !";
@@ -41,6 +45,10 @@ class Login {
 
             $response[$tool1_units_key] = $row["$tool1_units_key"];
 
+            $response[$tool1_du_key] = Constants::TOOL_1_DU;
+
+            $response[$tool1_name_key] = Constants::TOOL_1_NAME;
+
             die(json_encode($response));
         
         }  
@@ -48,7 +56,7 @@ class Login {
 
         $query = QueryHelper::make_insert_query(Constants::USERS_TABLE, Constants::GMAIL_KEY, Constants::GMAIL_QUERY_KEY);     
 
-        $this->make_db_conn($db, $query, $query_params, "Database Error2. ");
+        QueryHelper::make_db_conn($db, $query, $query_params, "Database Error2. ");
     
         $response[Constants::SUCCESS_KEY] = 1;
 
@@ -57,28 +65,6 @@ class Login {
         echo json_encode($response);
 
         session_destroy();    
-
-    }
-
-    public function make_db_conn($db, $q, $qp, $fail_message) {
-
-    	try {
-
-    		$stmt   = $db->prepare($q);
-
-    		$result = $stmt->execute($qp);
-
-            return $stmt;
-
-    	} catch (PDOException $ex) {
-
-    		$response[Constants::SUCCESS_KEY] = 0;
-
-    		$response[Constants::MESSAGE_KEY] = $fail_message . $ex->getMessage();
-
-    		die(json_encode($response));
-
-    	}
 
     }
 
