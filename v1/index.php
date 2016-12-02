@@ -5,6 +5,7 @@ require 'Constants.class.php';
 require 'Login.class.php';
 require 'Buy.class.php';
 require 'Points.class.php';
+require 'Info.class.php';
 
 function make_login_routine($db) {
 
@@ -73,6 +74,14 @@ function make_points_routine($db) {
 
 }
 
+function make_info_routine($db) {
+
+	$Info = new Info();
+
+	$Info->make_info($db);
+
+}
+
 if (empty($_POST[Constants::SCOPE_KEY]) ||
 	!isset($_POST[Constants::SCOPE_KEY])) {
 
@@ -103,6 +112,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	    case Constants::SCOPE_POINTS:
 
 	    	make_points_routine($db);
+
+	    break;
+
+	    case Constants::SCOPE_INFO:
+
+	        make_info_routine($db);
 
 	    break;
 

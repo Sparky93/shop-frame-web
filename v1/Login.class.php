@@ -25,29 +25,21 @@ class Login {
 
         if ($row) {  
 
-            $id_key = Constants::ID_KEY;
-
-            $tool1_id_key = '1' . Constants::TOOL_UNLOCKED_KEY;
-
-            $tool1_units_key = '1' . Constants::TOOL_UNITS_KEY;
-
-            $tool1_name_key = '1' . Constants::TOOL_NAME_KEY;
-
-            $tool1_du_key = '1' . Constants::TOOL_DU_KEY;
-
             $response[Constants::SUCCESS_KEY] = 2;
 
             $response[Constants::MESSAGE_KEY] = "Username Successfully Logged In !";
 
-            $response[Constants::ID_KEY] = $row["$id_key"];
+            $response[Constants::ID_KEY] = $row[Constants::ID_KEY];
 
-            $response[$tool1_id_key] = $row["$tool1_id_key"];
-
-            $response[$tool1_units_key] = $row["$tool1_units_key"];
-
-            $response[$tool1_du_key] = Constants::TOOL_1_DU;
-
-            $response[$tool1_name_key] = Constants::TOOL_1_NAME;
+            $response[Constants::TOOLS_KEY] = array(
+                array(
+                    Constants::TOOL_ID_KEY => '1',
+                    '1' . Constants::TOOL_NAME_KEY => Constants::TOOL_1_NAME,
+                    '1' . Constants::TOOL_UNLOCKED_KEY => $row['1' . Constants::TOOL_UNLOCKED_KEY],
+                    '1' . Constants::TOOL_UNITS_KEY => $row['1' . Constants::TOOL_UNITS_KEY],
+                    '1' . Constants::TOOL_DU_KEY => Constants::TOOL_1_DU
+                    )
+                );
 
             die(json_encode($response));
         

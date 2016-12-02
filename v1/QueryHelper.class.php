@@ -25,6 +25,17 @@ class QueryHelper {
 
 	}
 
+	static function make_select_non_conditional_query($count, $table_name) {
+
+		$query = "SELECT ";
+		$query .= $count;
+		$query .=  " FROM ";
+		$query .= $table_name;
+
+		return $query;
+
+	}
+
 	static function make_insert_query($table_name, $keys, $values) {
 
 			$query = "INSERT INTO ";
