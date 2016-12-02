@@ -1,18 +1,28 @@
-1) 
-   # Name: LOGIN 
-   # Method: POST
+# -------------------------------------------------------------------------------
 
-# Body
+
+# Name: 
+   LOGIN 
+   
+# Method: 
+   POST
+
+# Body:
 
  -> scope = scope_login
   
  -> gmail = <...>@gmail.com
  
- 
-2) 
-   # Name: BUY
-   # Method: POST
 
+# ------------------------------------------------------------------------------- 
+
+
+# Name: 
+   BUY
+   
+# Method:
+   POST
+   
 # Body
 
  -> scope = scope_buy
@@ -22,8 +32,13 @@
  -> tool_id = <#>
  
  
- 3) 
-    # Name: POINTS
-    # Method: POST
+# ------------------------------------------------------------------------------- 
+
+
+# Name: 
+   POINTS
+   
+# Method: 
+   POST
     
     # In progress...
