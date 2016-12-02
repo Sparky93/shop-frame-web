@@ -40,9 +40,9 @@ class QueryHelper {
 
 		$query = "UPDATE ";
 		$query .= $table_name;
-		$query .= "SET ";
+		$query .= " SET ";
 		$query .= $set_query;
-		$query .= " WHERE "
+		$query .= " WHERE ";
 		$query .= $where_query;
 
 		return $query;

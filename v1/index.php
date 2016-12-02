@@ -3,6 +3,7 @@
 include 'config.inc.php';
 require 'Constants.class.php';
 require 'Login.class.php';
+require 'Buy.class.php';
 
 function make_login_routine($db) {
 
@@ -27,10 +28,8 @@ function make_login_routine($db) {
 
 function make_buy_routine($db) {
 
-	if (isset($_POST[Constants::TOOL_ID_KEY]) &&
-		!empty($_POST[Constants::TOOL_ID_KEY]) &&
-		isset($_POST[Constants::GMAIL_KEY]) && 
-		!empty($_POST[Constants::GMAIL_KEY])) {
+	if (isset($_POST[Constants::TOOL_ID_KEY]) && 
+		isset($_POST[Constants::GMAIL_KEY])) {
 
 		$Buy = new Buy();
 
@@ -53,7 +52,7 @@ function make_points_routine($db) {
 
 	if (isset($_POST[Constants::TOOL_ID_KEY]) &&
 		!empty($_POST[Constants::TOOL_ID_KEY]) &&
-		isset($_POST[Constants::GMAIL_KEY]) && 
+		isset($_POST[Constants::GMAIL_KEY]) &&
 		!empty($_POST[Constants::GMAIL_KEY])) {
 
 
@@ -69,42 +68,50 @@ function make_points_routine($db) {
 
 }
 
-if (empty($_POST['SCOPE']) &&
-	!isset($_POST['SCOPE'])) {
+if (empty($_POST[Constants::SCOPE_KEY]) ||
+	!isset($_POST[Constants::SCOPE_KEY])) {
 
 	$response['success'] = 0;
 
-	$response['message'] = "No SCOPE specified!";
+	$response['message'] = "No scope specified!";
 
 	die(json_encode($response));
 
 }
 
-switch ($_SERVER['REQUEST_METHOD']) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-	case 'POST':
+	switch ($_POST[Constants::SCOPE_KEY]) {
 
-	    if ($_POST['SCOPE'] == Constants::SCOPE_LOGIN) {
+		case Constants::SCOPE_LOGIN:
 
 	    	make_login_routine($db);	
 
-	    } else if ($_POST['SCOPE'] == Constants::SCOPE_BUY) {
+	   	break;
+
+	   	case Constants::SCOPE_BUY:	
 
 	    	make_buy_routine($db);
 
-	    } else if ($_POST['SCOPE'] == Constants::SCOPE_POINTS){
+	    break;
+
+	    case Constants::SCOPE_POINTS:
 
 	    	make_points_routine($db);
 
-	    }
-
 	    break;
 
-	default:
+	    default:
 
-		# code...
+	        $response['success'] = 0;
+
+	        $response['message'] = "scope is unknown.";
+
+	        die(json_encode($response));
 
 		break;
+
+    }
 
 }
 

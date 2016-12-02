@@ -25,9 +25,13 @@ class Login {
 
         if ($row) {  
 
-            $response[Constants::SUCCESS_KEY] = 0;
+            $tool1_key = '1' . Constants::TOOL_UNLOCKED_KEY;
+
+            $response[Constants::SUCCESS_KEY] = 2;
 
             $response[Constants::MESSAGE_KEY] = "Username Successfully Logged In !";
+
+            $response[$tool1_key] = $row[$tool1_key];
 
             die(json_encode($response));
         
