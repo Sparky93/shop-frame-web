@@ -40,10 +40,10 @@
 
 
 # Name: 
-   BUY
+    BUY
    
 # Method:
-   POST
+    POST
    
 # Body
 
@@ -108,10 +108,10 @@
  
  
 # Name: 
-   INFO
+    INFO
    
 # Method: 
-   POST
+    POST
     
 # Body
 
