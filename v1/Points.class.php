@@ -98,35 +98,10 @@ class Points {
 		$response[Constants::TOOL_JSON_UNITS_KEY] = $points;
 
 		# So till' here, we have successfully updated the users table, time for
-		# info_tools table
-
-		# [3] Now we have to fetch this tool index value so we can update it
-
-		$query = QueryHelper::make_select_query("*", Constants::INFO_TOOLS_TABLE, 
-			Constants::TOOL_ID_KEY, Constants::TOOL_ID_QUERY_KEY);
-
-
-		$query_params = array(
-			Constants::TOOL_ID_QUERY_KEY => $tool_id
-			);
-
-		$stmt = QueryHelper::make_db_conn($db, $query, $query_params, "Database Error1. ");     
-
-        $row = $stmt->fetch();   
-
-        if ($row) {  
-
-        	$tool_index = $row[Constants::TOOL_INDEX_KEY];
-
-        }
-
-        # So now we have the current index fetched in our $tool_index variable
-        # All we gotta do now is to update this index and push it to the DB table
-
-        $tool_index = $tool_index + $delta;
+		# [3] updating info_tools table
 
         $query = QueryHelper::make_update_query(Constants::INFO_TOOLS_TABLE, 
-        	Constants::TOOL_INDEX_KEY  . " = " . "'$tool_index'",
+        	Constants::TOOL_INDEX_KEY  . " = " . Constants::TOOL_INDEX_KEY . " + $delta",
         	Constants::TOOL_ID_KEY . " = " . "'$tool_id'");
 
         $query_params = array();

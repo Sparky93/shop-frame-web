@@ -13,8 +13,11 @@ class Buy {
 
 	public function make_buy($db, $gmail, $item_id) {
 
+		$datetime = date_create()->format('Y-m-d H:i:s');
+
 		$query = QueryHelper::make_update_query(Constants::USERS_TABLE,
-			$item_id . Constants::TOOL_UNLOCKED_KEY . " = '1'" . " , " . $item_id . Constants::TOOL_UNITS_KEY . " = " . Constants::TOOL_1_DU, 
+			$item_id . Constants::TOOL_UNLOCKED_KEY . " = '1'" . " , " . $item_id . Constants::TOOL_UNITS_KEY . " = " . Constants::TOOL_1_DU . " , " .
+			$item_id . Constants::TOOL_UPDATED_DATE_KEY . " = " . "'$datetime'", 
 			Constants::GMAIL_KEY . " = " . "'$gmail'");
 
 		$query_params = array();

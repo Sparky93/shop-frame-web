@@ -20,6 +20,7 @@ class Constants {
 	const GMAIL_KEY = 'gmail';
 	const CREATED_DATE_KEY = 'created_date';
 	const UPDATED_DATE_KEY = 'updated_date';
+	const TOOL_UPDATED_DATE_KEY = '_updated_date';
 	const TOOL_ID_KEY = 'tool_id';
 	const TOOL_INDEX_KEY = 'tool_index';
 	const TOOL_UNLOCKED_KEY = '_unlocked'; # the format is toolId_unlocked

@@ -31,15 +31,14 @@ class Login {
 
             $response[Constants::ID_KEY] = $row[Constants::ID_KEY];
 
-            $response[Constants::UPDATED_DATE_KEY] = $row[Constants::UPDATED_DATE_KEY];
-
             $response[Constants::TOOLS_KEY] = array(
                 array(
                     Constants::TOOL_ID_KEY => '1',
                     Constants::TOOL_JSON_NAME_KEY => Constants::TOOL_1_NAME,
                     Constants::TOOL_JSON_UNLOCKED_KEY => $row['1' . Constants::TOOL_UNLOCKED_KEY],
                     Constants::TOOL_JSON_UNITS_KEY => $row['1' . Constants::TOOL_UNITS_KEY],
-                    Constants::TOOL_JSON_DU_KEY => Constants::TOOL_1_DU
+                    Constants::TOOL_JSON_DU_KEY => Constants::TOOL_1_DU,
+                    Constants::UPDATED_DATE_KEY => $row['1' . Constants::TOOL_UPDATED_DATE_KEY]
                     )
                 );
 
