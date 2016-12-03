@@ -4,6 +4,8 @@ include 'config.inc.php';
 require_once 'Constants.class.php';
 require_once 'QueryHelper.class.php';
 
+define (TIMESTAMP, 'TIMESTAMP');
+
 $tool1_units_key = '1' . Constants::TOOL_UNITS_KEY;
 
 $tool1_unlocked_key = '1' . Constants::TOOL_UNLOCKED_KEY;
@@ -21,5 +23,13 @@ $query = QueryHelper::make_update_query(Constants::USERS_TABLE,
 $query_params = array();
 
 QueryHelper::make_db_conn($db, $query, $query_params, "Cron-Job failed.");
+
+$response[Constants::SUCCESS_KEY] = 1;
+
+$response[Constants::MESSAGE_KEY] = "Cron-Job successfully made.";
+
+$response[TIMESTAMP] = $datetime;
+
+die(json_encode($response));
 
 ?>

@@ -39,8 +39,6 @@ class Points {
 
             $points = $row[$tool_id . Constants::TOOL_UNITS_KEY];
 
-            $delta = $row[$tool_id . Constants::TOOL_UNITS_KEY];
-
             if ($points == '0' || $points == 0) {
 
             	$response[Constants::MESSAGE_KEY] = "You don't have enough points !";
@@ -61,15 +59,9 @@ class Points {
 
         	case '1':
 
-        	if ($points >= Constants::TOOL_1_DU) {
+        	$delta = $points;
 
-        		$points = $points - Constants::TOOL_1_DU;
-
-        	} else {
-
-        		$points = '0';
-
-        	}
+        	$points = '0';        	
         		
         		break;
         	
