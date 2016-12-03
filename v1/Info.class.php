@@ -31,9 +31,38 @@ class Info {
                 array(
                     Constants::TOOL_ID_KEY => $row[Constants::TOOL_ID_KEY],
                     Constants::TOOL_JSON_NAME_KEY => $row[Constants::TOOL_JSON_NAME_KEY],
+                    Constants::TOOL_JSON_AVAILABLE_KEY => $row[Constants::TOOL_JSON_AVAILABLE_KEY],
                     Constants::TOOL_UPDATED_ON_TOOLS_KEY => $row[Constants::TOOL_UPDATED_ON_TOOLS_KEY],
                     Constants::TOOL_INDEX_KEY=> $row[Constants::TOOL_INDEX_KEY]
-                    )
+                    ),
+                array(
+                	Constants::TOOL_ID_KEY => '2',
+                    Constants::TOOL_JSON_NAME_KEY => 'Tool unavailable yet.',
+                    Constants::TOOL_JSON_AVAILABLE_KEY => '0',
+                    Constants::TOOL_UPDATED_ON_TOOLS_KEY => NULL,
+                    Constants::TOOL_INDEX_KEY=> '0'
+                	),
+                array(
+                	Constants::TOOL_ID_KEY => '3',
+                    Constants::TOOL_JSON_NAME_KEY => 'Tool unavailable yet.',
+                    Constants::TOOL_JSON_AVAILABLE_KEY => '0',
+                    Constants::TOOL_UPDATED_ON_TOOLS_KEY => NULL,
+                    Constants::TOOL_INDEX_KEY=> '0'
+                	),
+                array(
+                	Constants::TOOL_ID_KEY => '4',
+                    Constants::TOOL_JSON_NAME_KEY => 'Tool unavailable yet.',
+                    Constants::TOOL_JSON_AVAILABLE_KEY => '0',
+                    Constants::TOOL_UPDATED_ON_TOOLS_KEY => NULL,
+                    Constants::TOOL_INDEX_KEY=> '0'
+                	),
+                array(
+                	Constants::TOOL_ID_KEY => '5',
+                    Constants::TOOL_JSON_NAME_KEY => 'Tool unavailable yet.',
+                    Constants::TOOL_JSON_AVAILABLE_KEY => '0',
+                    Constants::TOOL_UPDATED_ON_TOOLS_KEY => NULL,
+                    Constants::TOOL_INDEX_KEY=> '0'
+                	)
                 );
 
         } else {

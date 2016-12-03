@@ -30,6 +30,7 @@ class Constants {
 
 	# JSON KEYS
 	const TOOL_JSON_NAME_KEY = 'tool_name';
+	const TOOL_JSON_AVAILABLE_KEY = 'tool_available';
 	const TOOL_JSON_UNLOCKED_KEY = 'unlocked';
 	const TOOL_JSON_UNITS_KEY = 'units';
 	const TOOL_JSON_DU_KEY = 'daily_units';

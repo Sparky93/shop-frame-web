@@ -30,6 +30,6 @@ $response[Constants::MESSAGE_KEY] = "Cron-Job successfully made.";
 
 $response[TIMESTAMP] = $datetime;
 
-die(json_encode($response));
+echo json_encode($response);
 
 ?>
