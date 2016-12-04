@@ -115,7 +115,7 @@
     
 # Body
 
- - No parameters required.
+ - scope = scope_info
 
 # Example responses:
 
