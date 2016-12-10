@@ -15,7 +15,7 @@ class Login {
 
         # Here we are checking whether the user exists or not
         $query = QueryHelper::make_select_query("*", Constants::USERS_TABLE, 
-            UsersTableConstants::GMAIL_KEY, UsersTableConstants::GMAIL_QUERY_KEY);  
+            UsersTableConstants::TABLE_GMAIL_KEY, UsersTableConstants::GMAIL_QUERY_KEY);  
 
         $query_params = array(UsersTableConstants::GMAIL_QUERY_KEY => $gmail); 
 
@@ -30,7 +30,7 @@ class Login {
         }  
 
 
-        $query = QueryHelper::make_insert_query(Constants::USERS_TABLE, UsersTableConstants::GMAIL_KEY, UsersTableConstants::GMAIL_QUERY_KEY);     
+        $query = QueryHelper::make_insert_query(Constants::USERS_TABLE, UsersTableConstants::TABLE_GMAIL_KEY, UsersTableConstants::GMAIL_QUERY_KEY);     
 
         QueryHelper::make_db_conn($db, $query, $query_params, "Database Error2. ");
 
