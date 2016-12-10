@@ -25,7 +25,7 @@ class Login {
 
         if ($row) {              
 
-            die(json_encode(get_response_from_row($row, $gmail));
+            die(json_encode(get_response_from_row($row, $gmail)));
         
         }  
 
