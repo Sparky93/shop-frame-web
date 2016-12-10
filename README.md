@@ -21,15 +21,15 @@
 {
   "success": 2,
   "message": "Username Successfully Logged In !",
-  "id": "1",
+  "id": "5",
   "tools": [
     {
-      "tool_id": "1",
-      "tool_name": "tool_one",
+      "id": "1",
+      "gmail": "asd5@gmail.com",
+      "created_date": "2016-12-10 15:28:17",
+      "updated_date": "2016-12-10 20:37:45",
       "unlocked": "1",
-      "units": "0",
-      "daily_units": 50,
-      "updated_date": "2016-12-02 13:01:42"
+      "units": "0"
     }
   ]
 }
@@ -128,10 +128,43 @@
   "tools": [
     {
       "tool_id": "1",
-      "tool_name": "tool_one",
-      "tool_updated_on": "2016-12-03 15:12:23",
-      "tool_available": "1",
-      "tool_index": "1300"
+      "name": "tool_one",
+      "available": "1",
+      "updated_on": "2016-12-10 20:38:08",
+      "index": "1200",
+      "daily_units": "50"
+    },
+    {
+      "tool_id": "2",
+      "name": "Tool unavailable yet.",
+      "available": "0",
+      "updated_on": "0000-00-00 00:00:00",
+      "index": "0",
+      "daily_units": "0"
+    },
+    {
+      "tool_id": "3",
+      "name": "Tool unavailable yet.",
+      "available": "0",
+      "updated_on": "0000-00-00 00:00:00",
+      "index": "0",
+      "daily_units": "0"
+    },
+    {
+      "tool_id": "4",
+      "name": "Tool unavailable yet.",
+      "available": "0",
+      "updated_on": "0000-00-00 00:00:00",
+      "index": "0",
+      "daily_units": "0"
+    },
+    {
+      "tool_id": "5",
+      "name": "Tool unavailable yet.",
+      "available": "0",
+      "updated_on": "0000-00-00 00:00:00",
+      "index": "0",
+      "daily_units": "0"
     }
   ]
 }
