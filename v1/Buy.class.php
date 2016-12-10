@@ -15,10 +15,25 @@ class Buy {
 
 		$datetime = date_create()->format('Y-m-d H:i:s');
 
+		switch ($item_id) {
+			case '1':
+
+			$du = ToolsTableConstants::TOOL_1_DU;
+
+				break;
+			
+			default:
+
+            $du = '0';
+
+				break;
+		}
+
 		$query = QueryHelper::make_update_query(Constants::USERS_TABLE,
-			$item_id . Constants::TOOL_UNLOCKED_KEY . " = '1'" . " , " . $item_id . Constants::TOOL_UNITS_KEY . " = " . Constants::TOOL_1_DU . " , " .
-			$item_id . Constants::TOOL_UPDATED_DATE_KEY . " = " . "'$datetime'", 
-			Constants::GMAIL_KEY . " = " . "'$gmail'");
+			$item_id . UsersTableConstants::TABLE_UNLOCKED_KEY . " = '1'" . " , " . 
+			$item_id . UsersTableConstants::TABLE_UNITS_KEY . " = " . $du . " , " .
+			$item_id . UsersTableConstants::TABLE_UPDATED_DATE_KEY . " = " . "'$datetime'", 
+			UsersTableConstants::TABLE_GMAIL_KEY . " = " . "'$gmail'");
 
 		$query_params = array();
 

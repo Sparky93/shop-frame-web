@@ -32,13 +32,13 @@ function make_login_routine($db) {
 
 function make_buy_routine($db) {
 
-	if (isset($_POST[Constants::TOOL_ID_KEY]) && 
-		isset($_POST[Constants::GMAIL_KEY])) {
+	if (isset($_POST[ToolsTableConstants::JSON_ID_KEY]) && 
+		isset($_POST[UsersTableConstants::JSON_GMAIL_KEY])) {
 
 		$Buy = new Buy();
 
-	    $Buy->make_buy($db, $_POST[Constants::GMAIL_KEY],
-	    	$_POST[Constants::TOOL_ID_KEY]);
+	    $Buy->make_buy($db, $_POST[UsersTableConstants::JSON_GMAIL_KEY],
+	    	$_POST[ToolsTableConstants::JSON_ID_KEY]);
 
 	} else {
 
