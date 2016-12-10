@@ -115,7 +115,7 @@
     
 # Body
 
- - No parameters required.
+ - scope = scope_info
 
 # Example responses:
 
@@ -130,6 +130,7 @@
       "tool_id": "1",
       "tool_name": "tool_one",
       "tool_updated_on": "2016-12-03 15:12:23",
+      "tool_available": "1",
       "tool_index": "1300"
     }
   ]
