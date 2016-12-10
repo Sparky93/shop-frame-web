@@ -35,7 +35,7 @@ class Info {
                     ToolsTableConstants::JSON_NAME_KEY => $row[ToolsTableConstants::TABLE_TOOL_NAME_KEY],
                     ToolsTableConstants::JSON_AVAILABLE_KEY => $row[ToolsTableConstants::TABLE_TOOL_AVAILABLE_KEY],
                     ToolsTableConstants::JSON_UPDATED_ON_KEY => $row[ToolsTableConstants::TABLE_TOOL_UPDATED_ON_KEY],
-                    ToolsTableConstants::JSON_INDEX_KEY => $row[ToolsTableConstants::JSON_INDEX_KEY],
+                    ToolsTableConstants::JSON_INDEX_KEY => $row[ToolsTableConstants::TABLE_TOOL_INDEX_KEY],
                     ToolsTableConstants::JSON_DAILY_UNITS => ToolsTableConstants::TOOL_1_DU
                     ),
                 array(
