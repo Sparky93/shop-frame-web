@@ -38,7 +38,7 @@ class Login {
 
     }
 
-    private function get_response_from_row($row, $gmail) {
+    public function get_response_from_row($row, $gmail) {
 
         if (!is_null($row)) {
 
