@@ -1,13 +1,13 @@
 <?php
 
 include 'config.inc.php';
-require 'Constants.class.php';
-require 'UsersTableConstants.class.php';
-require 'ToolsTableConstants.class.php';
-require 'Login.class.php';
-require 'Buy.class.php';
-require 'Points.class.php';
-require 'Info.class.php';
+require_once 'Constants.class.php';
+require_once 'UsersTableConstants.class.php';
+require_once 'ToolsTableConstants.class.php';
+require_once 'Login.class.php';
+require_once 'Buy.class.php';
+require_once 'Points.class.php';
+require_once 'Info.class.php';
 
 function make_login_routine($db) {
 

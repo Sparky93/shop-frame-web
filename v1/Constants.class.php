@@ -18,6 +18,7 @@ class Constants {
 	# GENERAL KEYS
 	const SUCCESS_KEY = 'success';
 	const MESSAGE_KEY = 'message';
+	const TOOLS_KEY = 'tools';
 
 	# SCOPES
 	const SCOPE_KEY = 'scope';
@@ -25,9 +26,6 @@ class Constants {
 	const SCOPE_BUY = 'scope_buy';
 	const SCOPE_POINTS = 'scope_points';
 	const SCOPE_INFO = 'scope_info';
-
-	# DAILY UNITS & TOOLS
-	const TOOLS_KEY = 'tools';
 
 }
 
