@@ -34,7 +34,7 @@ class Login {
 
         QueryHelper::make_db_conn($db, $query, $query_params, "Database Error2. ");
 
-        die json_encode(get_response_from_row(NULL, $gmail));
+        die(json_encode(get_response_from_row(NULL, $gmail)));
 
     }
 
@@ -73,6 +73,8 @@ class Login {
         $response[UsersTableConstants::JSON_ID_KEY] = '0';
 
         $datetime = date_create()->format('Y-m-d H:i:s');
+
+        $ids = '1';
 
         $response[Constants::TOOLS_KEY] = array(
                 array(
