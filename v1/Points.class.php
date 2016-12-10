@@ -1,6 +1,8 @@
 <?php
 
 require_once 'Constants.class.php';
+require_once 'ToolsTableConstants.class.php';
+require_once 'UsersTableConstants.class.php';
 require_once 'QueryHelper.class.php';
 
 class Points {
@@ -24,11 +26,11 @@ class Points {
 		# [1] We fetch his current points
 
 		$query = QueryHelper::make_select_query("*", Constants::USERS_TABLE, 
-			Constants::GMAIL_KEY, Constants::GMAIL_QUERY_KEY);
+			UsersTableConstants::TABLE_GMAIL_KEY, UsersTableConstants::GMAIL_QUERY_KEY);
 
 
 		$query_params = array(
-			Constants::GMAIL_QUERY_KEY => $gmail
+			UsersTableConstants::GMAIL_QUERY_KEY => $gmail
 			);
 
 		$stmt = QueryHelper::make_db_conn($db, $query, $query_params, "Database Error1. ");     
@@ -37,7 +39,7 @@ class Points {
 
         if ($row) {  
 
-            $points = $row[$tool_id . Constants::TOOL_UNITS_KEY];
+            $points = $row[$tool_id . UsersTableConstants::TABLE_UNITS_KEY];
 
             if ($points == '0' || $points == 0) {
 
@@ -76,8 +78,8 @@ class Points {
         # [2] We update his current points
 
         $query = QueryHelper::make_update_query(Constants::USERS_TABLE, 
-        	$tool_id . Constants::TOOL_UNITS_KEY  . " = " . "'$points'",
-        	Constants::GMAIL_KEY . " = " . "'$gmail'");
+        	$tool_id . UsersTableConstants::TABLE_UNITS_KEY . " = " . "'$points'",
+        	UsersTableConstants::TABLE_GMAIL_KEY . " = " . "'$gmail'");
 
         $query_params = array();
 
@@ -87,14 +89,14 @@ class Points {
 
 		$response[Constants::MESSAGE_KEY] = "You have successfully used these points!";
 
-		$response[Constants::TOOL_JSON_UNITS_KEY] = $points;
+		$response[UsersTableConstants::JSON_UNITS_KEY] = $points;
 
-		# So till' here, we have successfully updated the users table, time for
-		# [3] updating info_tools table
+		# [3] So till' here, we have successfully updated the users table, time for
+		# updating info_tools table
 
         $query = QueryHelper::make_update_query(Constants::INFO_TOOLS_TABLE, 
-        	Constants::TOOL_INDEX_KEY  . " = " . Constants::TOOL_INDEX_KEY . " + $delta",
-        	Constants::TOOL_ID_KEY . " = " . "'$tool_id'");
+        	ToolsTableConstants::TABLE_TOOL_INDEX_KEY  . " = " . ToolsTableConstants::TABLE_TOOL_INDEX_KEY . " + $delta",
+        	ToolsTableConstants::TABLE_ID_KEY . " = " . "'$tool_id'");
 
         $query_params = array();
 

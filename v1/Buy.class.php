@@ -1,6 +1,8 @@
 <?php
 
 require_once 'Constants.class.php';
+require_once 'ToolsTableConstants.class.php';
+require_once 'UsersTableConstants.class.php';
 require_once 'QueryHelper.class.php';
 
 class Buy {
