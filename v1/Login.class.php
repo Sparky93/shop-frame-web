@@ -45,6 +45,8 @@ class Login {
 
         $response[UsersTableConstants::JSON_ID_KEY] = '0';
 
+        $response[UsersTableConstants::JSON_GMAIL_KEY] = $gmail;
+
         $datetime = date_create()->format('Y-m-d H:i:s');
 
         $ids = '1';
@@ -52,7 +54,6 @@ class Login {
         $response[Constants::TOOLS_KEY] = array(
                 array(
                       UsersTableConstants::JSON_ID_KEY => $ids,
-                    UsersTableConstants::JSON_GMAIL_KEY => $gmail,
                     UsersTableConstants::JSON_CREATED_DATE_KEY => $datetime,
                     UsersTableConstants::JSON_UPDATED_DATE_KEY => $datetime,
                     UsersTableConstants::JSON_UNLOCKED_KEY => '0',
@@ -72,7 +73,7 @@ class Login {
 
         $query_params = array(UsersTableConstants::GMAIL_QUERY_KEY => $gmail); 
 
-        $stmt = QueryHelper::make_db_conn($db, $query, $query_params, "Database Error1. ");     
+        $stmt = QueryHelper::make_db_conn($db, $query, $query_params, "Database Error1. "); 
 
         $row = $stmt->fetch();   
 
