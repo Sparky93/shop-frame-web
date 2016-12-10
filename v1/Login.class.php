@@ -11,33 +11,6 @@ class Login {
 
 	}
 
-    public function make_login($db, $gmail) {  
-
-        # Here we are checking whether the user exists or not
-        $query = QueryHelper::make_select_query("*", Constants::USERS_TABLE, 
-            UsersTableConstants::TABLE_GMAIL_KEY, UsersTableConstants::GMAIL_QUERY_KEY);  
-
-        $query_params = array(UsersTableConstants::GMAIL_QUERY_KEY => $gmail); 
-
-        $stmt = QueryHelper::make_db_conn($db, $query, $query_params, "Database Error1. ");     
-
-        $row = $stmt->fetch();   
-
-        if ($row) {              
-
-            die(json_encode(get_response_from_row($row, $gmail)));
-        
-        }  
-
-
-        $query = QueryHelper::make_insert_query(Constants::USERS_TABLE, UsersTableConstants::TABLE_GMAIL_KEY, UsersTableConstants::GMAIL_QUERY_KEY);     
-
-        QueryHelper::make_db_conn($db, $query, $query_params, "Database Error2. ");
-
-        die(json_encode(get_response_from_row(NULL, $gmail)));
-
-    }
-
     public function get_response_from_row($row, $gmail) {
 
         if (!is_null($row)) {
@@ -88,6 +61,33 @@ class Login {
                 );
 
         return $response;
+
+    }
+
+    public function make_login($db, $gmail) {  
+
+        # Here we are checking whether the user exists or not
+        $query = QueryHelper::make_select_query("*", Constants::USERS_TABLE, 
+            UsersTableConstants::TABLE_GMAIL_KEY, UsersTableConstants::GMAIL_QUERY_KEY);  
+
+        $query_params = array(UsersTableConstants::GMAIL_QUERY_KEY => $gmail); 
+
+        $stmt = QueryHelper::make_db_conn($db, $query, $query_params, "Database Error1. ");     
+
+        $row = $stmt->fetch();   
+
+        if ($row) {              
+
+            die(json_encode($this->get_response_from_row($row, $gmail)));
+        
+        }  
+
+
+        $query = QueryHelper::make_insert_query(Constants::USERS_TABLE, UsersTableConstants::TABLE_GMAIL_KEY, UsersTableConstants::GMAIL_QUERY_KEY);     
+
+        QueryHelper::make_db_conn($db, $query, $query_params, "Database Error2. ");
+
+        die(json_encode($this->get_response_from_row(NULL, $gmail)));
 
     }
 
