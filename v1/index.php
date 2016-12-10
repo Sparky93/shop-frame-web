@@ -2,6 +2,8 @@
 
 include 'config.inc.php';
 require 'Constants.class.php';
+require 'UsersTableConstants.class.php';
+require 'ToolsTableConstants.class.php';
 require 'Login.class.php';
 require 'Buy.class.php';
 require 'Points.class.php';
@@ -9,12 +11,12 @@ require 'Info.class.php';
 
 function make_login_routine($db) {
 
-	if (isset($_POST[Constants::GMAIL_KEY]) && 
-		!empty($_POST[Constants::GMAIL_KEY])) {
+	if (isset($_POST[UsersTableConstants::GMAIL_KEY]) && 
+		!empty($_POST[UsersTableConstants::GMAIL_KEY])) {
 
 		$Login = new Login();
 
-		$Login->make_login($db, $_POST[Constants::GMAIL_KEY]);		
+		$Login->make_login($db, $_POST[UsersTableConstants::GMAIL_KEY]);		
 
 	} else {
 
