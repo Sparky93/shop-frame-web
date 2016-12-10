@@ -11,12 +11,12 @@ require 'Info.class.php';
 
 function make_login_routine($db) {
 
-	if (isset($_POST[UsersTableConstants::GMAIL_KEY]) && 
-		!empty($_POST[UsersTableConstants::GMAIL_KEY])) {
+	if (isset($_POST[JSON_GMAIL_KEY::GMAIL_KEY]) && 
+		!empty($_POST[JSON_GMAIL_KEY::GMAIL_KEY])) {
 
 		$Login = new Login();
 
-		$Login->make_login($db, $_POST[UsersTableConstants::GMAIL_KEY]);		
+		$Login->make_login($db, $_POST[JSON_GMAIL_KEY::GMAIL_KEY]);		
 
 	} else {
 
