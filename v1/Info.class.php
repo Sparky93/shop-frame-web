@@ -2,6 +2,8 @@
 
 require_once 'Constants.class.php';
 require_once 'QueryHelper.class.php';
+require_once 'UsersTableConstants.class.php';
+require_once 'ToolsTableConstants.class.php';
 
 class Info {
 
@@ -29,39 +31,44 @@ class Info {
 
             $response[Constants::TOOLS_KEY] = array(
                 array(
-                    Constants::TOOL_ID_KEY => $row[Constants::TOOL_ID_KEY],
-                    Constants::TOOL_JSON_NAME_KEY => $row[Constants::TOOL_JSON_NAME_KEY],
-                    Constants::TOOL_JSON_AVAILABLE_KEY => $row[Constants::TOOL_JSON_AVAILABLE_KEY],
-                    Constants::TOOL_UPDATED_ON_TOOLS_KEY => $row[Constants::TOOL_UPDATED_ON_TOOLS_KEY],
-                    Constants::TOOL_INDEX_KEY=> $row[Constants::TOOL_INDEX_KEY]
+                    ToolsTableConstants::JSON_ID_KEY => $row[ToolsTableConstants::TABLE_ID_KEY],
+                    ToolsTableConstants::JSON_NAME_KEY => $row[ToolsTableConstants::TABLE_TOOL_NAME_KEY],
+                    ToolsTableConstants::JSON_AVAILABLE_KEY => $row[ToolsTableConstants::TABLE_TOOL_AVAILABLE_KEY],
+                    ToolsTableConstants::JSON_UPDATED_ON_KEY => $row[ToolsTableConstants::TABLE_TOOL_UPDATED_ON_KEY],
+                    ToolsTableConstants::JSON_INDEX_KEY => $row[ToolsTableConstants::JSON_INDEX_KEY],
+                    ToolsTableConstants::JSON_DAILY_UNITS => ToolsTableConstants::TOOL_1_DU
                     ),
                 array(
-                	Constants::TOOL_ID_KEY => '2',
-                    Constants::TOOL_JSON_NAME_KEY => 'Tool unavailable yet.',
-                    Constants::TOOL_JSON_AVAILABLE_KEY => '0',
-                    Constants::TOOL_UPDATED_ON_TOOLS_KEY => NULL,
-                    Constants::TOOL_INDEX_KEY=> '0'
+                	ToolsTableConstants::JSON_ID_KEY => '2',
+                    ToolsTableConstants::JSON_NAME_KEY => 'Tool unavailable yet.',
+                    ToolsTableConstants::JSON_AVAILABLE_KEY => '0',
+                    ToolsTableConstants::JSON_UPDATED_ON_KEY => '0000-00-00 00:00:00',
+                    ToolsTableConstants::JSON_INDEX_KEY => '0',
+                    ToolsTableConstants::JSON_DAILY_UNITS => '0'
                 	),
                 array(
-                	Constants::TOOL_ID_KEY => '3',
-                    Constants::TOOL_JSON_NAME_KEY => 'Tool unavailable yet.',
-                    Constants::TOOL_JSON_AVAILABLE_KEY => '0',
-                    Constants::TOOL_UPDATED_ON_TOOLS_KEY => NULL,
-                    Constants::TOOL_INDEX_KEY=> '0'
+                	ToolsTableConstants::JSON_ID_KEY => '3',
+                    ToolsTableConstants::JSON_NAME_KEY => 'Tool unavailable yet.',
+                    ToolsTableConstants::JSON_AVAILABLE_KEY => '0',
+                    ToolsTableConstants::JSON_UPDATED_ON_KEY => '0000-00-00 00:00:00',
+                    ToolsTableConstants::JSON_INDEX_KEY => '0',
+                    ToolsTableConstants::JSON_DAILY_UNITS => '0'
                 	),
                 array(
-                	Constants::TOOL_ID_KEY => '4',
-                    Constants::TOOL_JSON_NAME_KEY => 'Tool unavailable yet.',
-                    Constants::TOOL_JSON_AVAILABLE_KEY => '0',
-                    Constants::TOOL_UPDATED_ON_TOOLS_KEY => NULL,
-                    Constants::TOOL_INDEX_KEY=> '0'
+                	ToolsTableConstants::JSON_ID_KEY => '4',
+                    ToolsTableConstants::JSON_NAME_KEY => 'Tool unavailable yet.',
+                    ToolsTableConstants::JSON_AVAILABLE_KEY => '0',
+                    ToolsTableConstants::JSON_UPDATED_ON_KEY => '0000-00-00 00:00:00',
+                    ToolsTableConstants::JSON_INDEX_KEY => '0',
+                    ToolsTableConstants::JSON_DAILY_UNITS => '0'
                 	),
                 array(
-                	Constants::TOOL_ID_KEY => '5',
-                    Constants::TOOL_JSON_NAME_KEY => 'Tool unavailable yet.',
-                    Constants::TOOL_JSON_AVAILABLE_KEY => '0',
-                    Constants::TOOL_UPDATED_ON_TOOLS_KEY => NULL,
-                    Constants::TOOL_INDEX_KEY=> '0'
+                	ToolsTableConstants::JSON_ID_KEY => '5',
+                    ToolsTableConstants::JSON_NAME_KEY => 'Tool unavailable yet.',
+                    ToolsTableConstants::JSON_AVAILABLE_KEY => '0',
+                    ToolsTableConstants::JSON_UPDATED_ON_KEY => '0000-00-00 00:00:00',
+                    ToolsTableConstants::JSON_INDEX_KEY => '0',
+                    ToolsTableConstants::JSON_DAILY_UNITS => '0'
                 	)
                 );
 
