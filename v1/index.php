@@ -61,8 +61,8 @@ function make_points_routine($db) {
 
 		$Points = new Points();
 
-	    $Points->make_points($db, $_POST[UsersTableConstants::GMAIL_KEY],
-	     $_POST[ToolsTableConstants::TOOL_ID_KEY]);
+	    $Points->make_points($db, $_POST[UsersTableConstants::TABLE_GMAIL_KEY],
+	     $_POST[ToolsTableConstants::TABLE_ID_KEY]);
 
 	} else {
 
