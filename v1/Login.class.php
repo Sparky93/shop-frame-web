@@ -23,13 +23,14 @@ class Login {
 
             $response[UsersTableConstants::JSON_ID_KEY] = $row[UsersTableConstants::TABLE_ID_KEY];
 
+            $response[UsersTableConstants::JSON_GMAIL_KEY] = $row[UsersTableConstants::TABLE_GMAIL_KEY];
+
             # TODO implement for each id from ids
             $ids = '1';
 
             $response[Constants::TOOLS_KEY] = array(
                 array(
                     UsersTableConstants::JSON_ID_KEY => $ids,
-                    UsersTableConstants::JSON_GMAIL_KEY => $row[UsersTableConstants::TABLE_GMAIL_KEY],
                     UsersTableConstants::JSON_CREATED_DATE_KEY => $row[UsersTableConstants::TABLE_CREATED_DATE_KEY],
                     UsersTableConstants::JSON_UPDATED_DATE_KEY => $row[$ids . UsersTableConstants::TABLE_UPDATED_DATE_KEY],
                     UsersTableConstants::JSON_UNLOCKED_KEY => $row[$ids . UsersTableConstants::TABLE_UNLOCKED_KEY],
