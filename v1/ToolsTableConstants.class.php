@@ -17,7 +17,7 @@ class ToolsTableConstants {
 
 	# JSON RESPONSE KEYS
 	# [DO NOT CHANGE THESE AFTER RELEASE WITHOUT A MIGRATION PLAN]
-	const JSON_ID_KEY = 'tool_id';
+	const JSON_ID_KEY = 'id';
 	const JSON_NAME_KEY = 'name';
 	const JSON_AVAILABLE_KEY = 'available';
 	const JSON_UPDATED_ON_KEY = 'updated_on';
