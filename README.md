@@ -127,7 +127,7 @@
   "message": "Successfully fetched data!",
   "tools": [
     {
-      "tool_id": "1",
+      "id": "1",
       "name": "tool_one",
       "available": "1",
       "updated_on": "2016-12-10 20:38:08",
@@ -135,7 +135,7 @@
       "daily_units": "50"
     },
     {
-      "tool_id": "2",
+      "id": "2",
       "name": "Tool unavailable yet.",
       "available": "0",
       "updated_on": "0000-00-00 00:00:00",
@@ -143,7 +143,7 @@
       "daily_units": "0"
     },
     {
-      "tool_id": "3",
+      "id": "3",
       "name": "Tool unavailable yet.",
       "available": "0",
       "updated_on": "0000-00-00 00:00:00",
@@ -151,7 +151,7 @@
       "daily_units": "0"
     },
     {
-      "tool_id": "4",
+      "id": "4",
       "name": "Tool unavailable yet.",
       "available": "0",
       "updated_on": "0000-00-00 00:00:00",
@@ -159,7 +159,7 @@
       "daily_units": "0"
     },
     {
-      "tool_id": "5",
+      "id": "5",
       "name": "Tool unavailable yet.",
       "available": "0",
       "updated_on": "0000-00-00 00:00:00",
