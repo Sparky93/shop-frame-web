@@ -96,7 +96,7 @@ class Points {
 
         $query = QueryHelper::make_update_query(Constants::INFO_TOOLS_TABLE, 
         	ToolsTableConstants::TABLE_TOOL_INDEX_KEY  . " = " . ToolsTableConstants::TABLE_TOOL_INDEX_KEY . " + $delta",
-        	ToolsTableConstants::TABLE_ID_KEY . " = " . "'$tool_id'");
+        	ToolsTableConstants::TABLE_TOOL_ID_KEY . " = " . "'$tool_id'");
 
         $query_params = array();
 

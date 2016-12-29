@@ -31,12 +31,14 @@ class Info {
 
             $response[Constants::TOOLS_KEY] = array(
                 array(
-                    ToolsTableConstants::JSON_ID_KEY => $row[ToolsTableConstants::TABLE_ID_KEY],
+                    ToolsTableConstants::JSON_ID_KEY => $row[ToolsTableConstants::TABLE_TOOL_ID_KEY],
                     ToolsTableConstants::JSON_NAME_KEY => $row[ToolsTableConstants::TABLE_TOOL_NAME_KEY],
                     ToolsTableConstants::JSON_AVAILABLE_KEY => $row[ToolsTableConstants::TABLE_TOOL_AVAILABLE_KEY],
                     ToolsTableConstants::JSON_UPDATED_ON_KEY => $row[ToolsTableConstants::TABLE_TOOL_UPDATED_ON_KEY],
                     ToolsTableConstants::JSON_INDEX_KEY => $row[ToolsTableConstants::TABLE_TOOL_INDEX_KEY],
-                    ToolsTableConstants::JSON_DAILY_UNITS => ToolsTableConstants::TOOL_1_DU
+                    ToolsTableConstants::JSON_DAILY_UNITS_KEY => $row[ToolsTableConstants::TABLE_TOOL_DAILY_UNITS_KEY],
+                    ToolsTableConstants::JSON_IMAGE_KEY => $row[ToolsTableConstants::TABLE_TOOL_IMAGE_KEY],
+                    ToolsTableConstants::JSON_PRICE_KEY => $row[ToolsTableConstants::TABLE_TOOL_PRICE_KEY]
                     ),
                 array(
                 	ToolsTableConstants::JSON_ID_KEY => '2',
@@ -44,7 +46,9 @@ class Info {
                     ToolsTableConstants::JSON_AVAILABLE_KEY => '0',
                     ToolsTableConstants::JSON_UPDATED_ON_KEY => '0000-00-00 00:00:00',
                     ToolsTableConstants::JSON_INDEX_KEY => '0',
-                    ToolsTableConstants::JSON_DAILY_UNITS => '0'
+                    ToolsTableConstants::JSON_DAILY_UNITS_KEY => '0',
+                    ToolsTableConstants::JSON_IMAGE_KEY => '',
+                    ToolsTableConstants::JSON_PRICE_KEY => '0'
                 	),
                 array(
                 	ToolsTableConstants::JSON_ID_KEY => '3',
@@ -52,7 +56,9 @@ class Info {
                     ToolsTableConstants::JSON_AVAILABLE_KEY => '0',
                     ToolsTableConstants::JSON_UPDATED_ON_KEY => '0000-00-00 00:00:00',
                     ToolsTableConstants::JSON_INDEX_KEY => '0',
-                    ToolsTableConstants::JSON_DAILY_UNITS => '0'
+                    ToolsTableConstants::JSON_DAILY_UNITS_KEY => '0',
+                    ToolsTableConstants::JSON_IMAGE_KEY => '',
+                    ToolsTableConstants::JSON_PRICE_KEY => '0'
                 	),
                 array(
                 	ToolsTableConstants::JSON_ID_KEY => '4',
@@ -60,7 +66,9 @@ class Info {
                     ToolsTableConstants::JSON_AVAILABLE_KEY => '0',
                     ToolsTableConstants::JSON_UPDATED_ON_KEY => '0000-00-00 00:00:00',
                     ToolsTableConstants::JSON_INDEX_KEY => '0',
-                    ToolsTableConstants::JSON_DAILY_UNITS => '0'
+                    ToolsTableConstants::JSON_DAILY_UNITS_KEY => '0',
+                    ToolsTableConstants::JSON_IMAGE_KEY => '',
+                    ToolsTableConstants::JSON_PRICE_KEY => '0'
                 	),
                 array(
                 	ToolsTableConstants::JSON_ID_KEY => '5',
@@ -68,7 +76,9 @@ class Info {
                     ToolsTableConstants::JSON_AVAILABLE_KEY => '0',
                     ToolsTableConstants::JSON_UPDATED_ON_KEY => '0000-00-00 00:00:00',
                     ToolsTableConstants::JSON_INDEX_KEY => '0',
-                    ToolsTableConstants::JSON_DAILY_UNITS => '0'
+                    ToolsTableConstants::JSON_DAILY_UNITS_KEY => '0',
+                    ToolsTableConstants::JSON_IMAGE_KEY => '',
+                    ToolsTableConstants::JSON_PRICE_KEY => '0'
                 	)
                 );
 

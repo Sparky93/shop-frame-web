@@ -54,15 +54,15 @@ function make_buy_routine($db) {
 
 function make_points_routine($db) {
 
-	if (isset($_POST[ToolsTableConstants::TABLE_ID_KEY]) &&
-		!empty($_POST[ToolsTableConstants::TABLE_ID_KEY]) &&
+	if (isset($_POST[ToolsTableConstants::TABLE_TOOL_ID_KEY]) &&
+		!empty($_POST[ToolsTableConstants::TABLE_TOOL_ID_KEY]) &&
 		isset($_POST[UsersTableConstants::TABLE_GMAIL_KEY]) &&
 		!empty($_POST[UsersTableConstants::TABLE_GMAIL_KEY])) {
 
 		$Points = new Points();
 
 	    $Points->make_points($db, $_POST[UsersTableConstants::TABLE_GMAIL_KEY],
-	     $_POST[ToolsTableConstants::TABLE_ID_KEY]);
+	     $_POST[ToolsTableConstants::TABLE_TOOL_ID_KEY]);
 
 	} else {
 
