@@ -17,23 +17,11 @@ class Buy {
 
 		$datetime = date_create()->format('Y-m-d H:i:s');
 
-		switch ($item_id) {
-			case '1':
-
-			$du = ToolsTableConstants::TOOL_1_DU;
-
-				break;
-			
-			default:
-
-            $du = '0';
-
-				break;
-		}
+		$du_query = $this->make_select_du_for_id($item_id);
 
 		$query = QueryHelper::make_update_query(Constants::USERS_TABLE,
 			$item_id . UsersTableConstants::TABLE_UNLOCKED_KEY . " = '1'" . " , " . 
-			$item_id . UsersTableConstants::TABLE_UNITS_KEY . " = " . $du . " , " .
+			$item_id . UsersTableConstants::TABLE_UNITS_KEY . " = " . $du_query . " , " .
 			$item_id . UsersTableConstants::TABLE_UPDATED_DATE_KEY . " = " . "'$datetime'", 
 			UsersTableConstants::TABLE_GMAIL_KEY . " = " . "'$gmail'");
 
@@ -48,6 +36,12 @@ class Buy {
 		die(json_encode($response));
 
 	}
+
+	public function make_select_du_for_id($item_id) {
+        return "SELECT " . ToolsTableConstants::TABLE_TOOL_DAILY_UNITS_KEY . " FROM " . Constants::INFO_TOOLS_TABLE .
+        " WHERE " . ToolsTableConstants::TABLE_TOOL_ID_KEY . " = " . $item_id;
+
+    }
 
 }
 
