@@ -17,7 +17,8 @@ class Buy {
 
 		$datetime = date_create()->format('Y-m-d H:i:s');
 
-		$du_query = $this->make_select_du_for_id($item_id);
+		$du_query = QueryHelper::make_select_query(ToolsTableConstants::TABLE_TOOL_DAILY_UNITS_KEY,
+            Constants::INFO_TOOLS_TABLE, ToolsTableConstants::TABLE_TOOL_ID_KEY, $item_id);
 
 		$query = QueryHelper::make_update_query(Constants::USERS_TABLE,
 			$item_id . UsersTableConstants::TABLE_UNLOCKED_KEY . " = '1'" . " , " . 
@@ -36,12 +37,6 @@ class Buy {
 		die(json_encode($response));
 
 	}
-
-	public function make_select_du_for_id($item_id) {
-        return "SELECT " . ToolsTableConstants::TABLE_TOOL_DAILY_UNITS_KEY . " FROM " . Constants::INFO_TOOLS_TABLE .
-        " WHERE " . ToolsTableConstants::TABLE_TOOL_ID_KEY . " = " . $item_id;
-
-    }
 
 }
 
