@@ -22,7 +22,7 @@ class Buy {
 
 		$query = QueryHelper::make_update_query(Constants::USERS_TABLE,
 			$item_id . UsersTableConstants::TABLE_UNLOCKED_KEY . " = '1'" . " , " . 
-			$item_id . UsersTableConstants::TABLE_UNITS_KEY . " = " . $du_query . " , " .
+			$item_id . UsersTableConstants::TABLE_UNITS_KEY . " = (" . $du_query . ") , " .
 			$item_id . UsersTableConstants::TABLE_UPDATED_DATE_KEY . " = " . "'$datetime'", 
 			UsersTableConstants::TABLE_GMAIL_KEY . " = " . "'$gmail'");
 
