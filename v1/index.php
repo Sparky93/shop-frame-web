@@ -37,8 +37,8 @@ function make_buy_routine($db) {
 
 		$Buy = new Buy();
 
-	    $Buy->make_buy($db, $_POST[UsersTableConstants::JSON_GMAIL_KEY],
-	    	$_POST[ToolsTableConstants::JSON_ID_KEY]);
+	    $Buy->make_buy($db, $_POST[UsersTableConstants::TABLE_GMAIL_KEY],
+	    	$_POST[ToolsTableConstants::TABLE_TOOL_ID_KEY]);
 
 	} else {
 
